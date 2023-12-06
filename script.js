@@ -3,17 +3,16 @@ fetch("https://striveschool-api.herokuapp.com/books")
     if (responseObj.ok) {
       return responseObj.json();
     }
-    throw new Error("Errore nella risposta del server");
   })
   .then((booksObj) => {
     const row = document.querySelector(".row");
 
     booksObj.forEach((book) => {
-      const card = document.createElement("div");
-      card.classList.add("col");
-      card.classList.add("mb-3");
-      card.id = book.asin; // Imposta l'ID della card come l'asin del libro
-      card.innerHTML = `
+      const col = document.createElement("div");
+      col.classList.add("col");
+      col.classList.add("mb-3");
+      col.id = book.asin; // Imposta l'ID della col come l'asin del libro
+      col.innerHTML = `
           <div class="card h-100">
             <img src="${book.img}" class="img-fluid" alt="${book.title}" style="height: 350px">
             <div class="card-body">
@@ -24,7 +23,7 @@ fetch("https://striveschool-api.herokuapp.com/books")
             </div>
           </div>
         `;
-      row.appendChild(card);
+      row.appendChild(col);
     });
   })
   .catch((error) => {

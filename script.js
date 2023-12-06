@@ -11,7 +11,7 @@ fetch("https://striveschool-api.herokuapp.com/books")
       const col = document.createElement("div");
       col.classList.add("col");
       col.classList.add("mb-3");
-      col.id = book.asin; // Imposta l'ID della col come l'asin del libro
+      col.id = book.asin;
       col.innerHTML = `
           <div class="card h-100">
             <img src="${book.img}" class="img-fluid" alt="${book.title}" style="height: 350px">
